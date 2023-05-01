@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -20,14 +19,22 @@ class _HomeState extends State<Home> {
         title: const Text(
           "Sanear",
           style: TextStyle(
-              color: Colors.black, fontSize: 36, fontWeight: FontWeight.bold),
+              color: Color(0xff0D1937),
+              fontSize: 36,
+              fontWeight: FontWeight.bold),
         ),
         actions: const [
           Padding(
-            padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+            padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
             child: ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Color(0xFFB01E1E))),
               onPressed: null,
-              child: Icon(Icons.sos),
+              child: Icon(
+                Icons.sos,
+                color: Colors.white,
+                size: 38,
+              ),
             ),
           )
         ],
@@ -54,19 +61,26 @@ class _HomeState extends State<Home> {
                       const Icon(Icons.wb_sunny_outlined,
                           size: 80, color: Color(0xFFE97E31)),
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             children: const [
                               Icon(Icons.pin_drop_outlined),
+                              SizedBox(width: 15),
                               Text("Sua localização")
                             ],
                           ),
-                          const Text("Previsão de Sol"),
+                          const Text(
+                            "Previsão de Sol",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
                         ],
                       )
                     ],
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 35),
                   const Text("Temperatura"),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -76,25 +90,47 @@ class _HomeState extends State<Home> {
                       ]),
                 ]),
           ),
-          GridView.count(
-            shrinkWrap: true,
-            crossAxisCount: 3,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            padding: const EdgeInsets.all(20),
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: GridView.count(
+              shrinkWrap: true,
+              crossAxisCount: 3,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Image.asset(
+                    "assets/img/embasa.png",
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
-                padding: const EdgeInsets.all(8),
-                child: SvgPicture.asset(
-                  "assets/img/embasa.svg",
-                  height: size.height * 0.005,
+                Container(
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Image.asset(
+                    "assets/img/limpurb.png",
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
-              ),
-            ],
-          ),
+                Container(
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Image.asset(
+                    "assets/img/codesal.png",
+                    fit: BoxFit.fitWidth,
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       )),
     );
