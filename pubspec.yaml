@@ -36,7 +36,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   http: ^0.13.5
-  flutter_svg: ^2.0.5
   equatable: ^2.0.5
   dartz: ^0.10.1
 
@@ -64,9 +63,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/img/defesa-civil.svg
-    - assets/img/embasa.svg
-    - assets/img/limpurb.svg
+    - assets/img/embasa.png
+    - assets/img/limpurb.png
+    - assets/img/codesal.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
