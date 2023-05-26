@@ -11,8 +11,10 @@ class Sos extends StatefulWidget {
 
 class _SosState extends State<Sos> {
   List<SosModel> dados = [
-    SosModel("DEFESA CIVIL",
-        "Quando alagamento, inundaçoes, deslizamento, desmoronamento", "199"),
+    SosModel(
+        "DEFESA CIVIL",
+        "Quando alagamento, inundaçoes, deslizamento, desmoronamento",
+        "0800 0555 195"),
     SosModel(
         "DEFESA CIVIL", "Quando ocorrência de afogamento, soterramento", "199"),
   ];
@@ -35,18 +37,22 @@ class _SosState extends State<Sos> {
                 fontWeight: FontWeight.bold),
           )),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              margin: const EdgeInsets.all(10),
-              padding: const EdgeInsets.all(5),
-              color: const Color.fromARGB(255, 222, 231, 235),
-              height: size.height * 0.1,
-              width: size.width,
-              child: DropdownButton<SosModel>(
-                padding: const EdgeInsets.all(5),
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "Selecione a emergência:",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              DropdownButton<SosModel>(
                 isExpanded: true,
+                //dropdownColor: const Color.fromARGB(255, 222, 231, 235),
                 value: dropdownValue,
                 elevation: 0,
                 onChanged: (SosModel? value) {
@@ -61,8 +67,39 @@ class _SosState extends State<Sos> {
                   );
                 }).toList(),
               ),
-            )
-          ],
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: size.width,
+                height: size.height * 0.15,
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: Color.fromARGB(57, 255, 37, 37)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      dropdownValue.orgao,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    Text(
+                      dropdownValue.contato,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w900, fontSize: 34),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
