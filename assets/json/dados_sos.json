@@ -2,8 +2,8 @@
 { "orgao": "DEFESA CIVIL", "situacao": "Quando alagamento, inundaçoes, deslizamento, desmoronamento", "contato": "199"},
 { "orgao": "BOMBEIRO", "situacao": "Quando ocorrência de afogamento, soterramento", "contato": "193"},
 { "orgao": "SAMU", "situacao": "Quando necessita de atendimento movel de urgências e emergência", "contato": "192"},
-{ "orgao": "COELBA", "situacao": "Quando a rede eletrica estiver em areas inundadas", "contato": "116"},
+{ "orgao": "COELBA", "situacao": "Quando a rede elétrica estiver em areas inundadas", "contato": "116"},
 { "orgao": "EMBASA", "situacao": "Quando rede de esgoto e sistema drenantes estiverem obstruídas", "contato": "0800 0555 195"},
-{ "orgao": "GCM GEPA grupo especial de proteção ambiental", "situacao": "Quando a presença de animais silvestres", "contato": "71 3202-5312"},
+{ "orgao": "GEPA - Grupo Especial de Proteção Ambiental", "situacao": "Quando há presença de animais silvestres", "contato": "71 3202-5312"},
 { "orgao": "POLÍCIA MILITAR", "situacao": "Quando necessita de segurança pública", "contato": "190"}
 ]
