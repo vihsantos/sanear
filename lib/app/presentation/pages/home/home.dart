@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/color_palette.dart';
 import '../sos/sos.dart';
 
 class Home extends StatefulWidget {
@@ -65,7 +66,7 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Icon(Icons.wb_sunny_outlined,
-                          size: 80, color: Color(0xFFE97E31)),
+                          size: 80, color: ColorPalette.diasdesol_02),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
