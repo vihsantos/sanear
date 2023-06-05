@@ -4,7 +4,7 @@ import 'package:sanear/app/data/datasources/remote_data_source.dart';
 import 'package:sanear/app/data/repositories/weather_repository_impl.dart';
 import 'package:sanear/app/domain/repositories/weather_repository.dart';
 import 'package:sanear/app/domain/use_cases/get_current_weather.dart';
-import 'package:sanear/app/presentation/controllers/sos_controller.dart';
+import 'package:sanear/app/presentation/controllers/home_controller.dart';
 
 class Injection {
   final locator = GetIt.instance;
@@ -25,6 +25,6 @@ class Injection {
     locator.registerLazySingleton(() => GetCurrentWeather(locator()));
 
     // Controller
-    locator.registerFactory(() => SosController(locator()));
+    locator.registerFactory(() => HomeController(locator()));
   }
 }

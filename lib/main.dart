@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:sanear/app/presentation/controllers/home_controller.dart';
 import 'package:sanear/injection.dart';
 import 'app/presentation/pages/home/home.dart';
 
 void main() async {
   Injection().init();
 
-  // chamada teste weather
-  // SosController sosController = locator<SosController>();
-  // await sosController.getCurrentWeather();
-  // if (!sosController.loading) {
-  //   log(sosController.weather.toString());
-  // }
-
-  // runApp(MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -29,7 +23,9 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         primarySwatch: Colors.blue,
       ),
-      home: const Home(),
+      home: Home(
+        homeController: locator<HomeController>(),
+      ),
     );
   }
 }

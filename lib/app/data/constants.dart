@@ -6,5 +6,5 @@ class Urls {
       '$_baseUrl?q=$lat,$long&key=$_apiKey';
 
   static String weatherIcon(String iconUrl) =>
-      'https://${((iconUrl).toString().substring(2)).replaceAll("64", "128")}';
+      'https://${((iconUrl).toString().substring(2))}';
 }
