@@ -33,8 +33,8 @@ class _HomeState extends State<Home> {
               style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Color(0xFFB01E1E))),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Sos()));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) =>  Sos()));
               },
               child: const Icon(
                 Icons.sos,
@@ -57,27 +57,27 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(15),
             width: size.width,
             height: size.height * 0.26,
-            child: const Column(
+            child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Icon(Icons.wb_sunny_outlined,
+                      const Icon(Icons.wb_sunny_outlined,
                           size: 80, color: Color(0xFFE97E31)),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
-                            children: [
+                            children: const [
                               Icon(Icons.pin_drop_outlined),
                               SizedBox(width: 15),
                               Text("Sua localização")
                             ],
                           ),
-                          Text(
+                          const Text(
                             "Previsão de Sol",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),

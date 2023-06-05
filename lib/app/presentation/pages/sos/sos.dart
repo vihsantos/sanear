@@ -5,14 +5,14 @@ import '../../controllers/sos_controller.dart';
 import 'components/card_contato.dart';
 
 class Sos extends StatefulWidget {
-  const Sos({super.key});
+  final SosController sosController;
+  const Sos({super.key, required this.sosController});
 
   @override
   State<Sos> createState() => _SosState();
 }
 
 class _SosState extends State<Sos> {
-  SosController controller = SosController();
   var dropdownValue = ValueNotifier<SosModel?>(null);
 
   @override
@@ -39,7 +39,7 @@ class _SosState extends State<Sos> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             FutureBuilder(
-                future: controller.buscarSosModel(),
+                future: widget.sosController.buscarSosModel(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
                     return const Center(

@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:sanear/app//domain/entities/forecast_day.dart';
+import 'package:sanear/app/domain/entities/forecast_day.dart';
 
 class Forecast extends Equatable {
   const Forecast({

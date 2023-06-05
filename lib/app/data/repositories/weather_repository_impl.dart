@@ -1,20 +1,22 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:sanear/app/data/datasources/remote_data_source.dart';
-import 'package:sanear/app/data/exception.dart';
-import 'package:sanear/app//domain/entities/weather.dart';
-import 'package:sanear/app//data/failure.dart';
-import 'package:sanear/app//domain/repositories/weather_repository.dart';
+
+import '../../domain/entities/weather.dart';
+import '../../domain/repositories/weather_repository.dart';
+import '../datasources/remote_data_source.dart';
+import '../exception.dart';
+import '../failure.dart';
 
 class WeatherRepositoryImpl implements WeatherRepository {
   final RemoteDataSource remoteDataSource;
   const WeatherRepositoryImpl({required this.remoteDataSource});
 
   @override
-  Future<Either<Failure, Weather>> getCurrentWeather(String cityName) async {
+  Future<Either<Failure, Weather>> getCurrentWeather(
+      String lat, String long) async {
     try {
-      final result = await remoteDataSource.getCurrentWeather(cityName);
+      final result = await remoteDataSource.getCurrentWeather(lat, long);
       return Right(result.toEntity());
     } on ServerException {
       return const Left(ServerFailure('Server failure'));

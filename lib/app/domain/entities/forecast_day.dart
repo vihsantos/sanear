@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
-import 'package:sanear/app//domain/entities/astro.dart';
-import 'package:sanear/app//domain/entities/day.dart';
-import 'package:sanear/app//domain/entities/hour_model.dart';
+import 'package:sanear/app/domain/entities/astro.dart';
+import 'package:sanear/app/domain/entities/day.dart';
+import 'package:sanear/app/domain/entities/hour_model.dart';
 
 class ForecastDay extends Equatable {
   const ForecastDay({
