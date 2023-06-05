@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/color_palette.dart';
 import '../sos/sos.dart';
 
 class Home extends StatefulWidget {
@@ -33,8 +34,8 @@ class _HomeState extends State<Home> {
               style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Color(0xFFB01E1E))),
               onPressed: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) =>  Sos()));
+                // Navigator.push(
+                //     context, MaterialPageRoute(builder: (context) => Sos()));
               },
               child: const Icon(
                 Icons.sos,
@@ -64,8 +65,8 @@ class _HomeState extends State<Home> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      const Icon(Icons.wb_sunny_outlined,
-                          size: 80, color: Color(0xFFE97E31)),
+                      Icon(Icons.wb_sunny_outlined,
+                          size: 80, color: ColorPalette.diasdesol_02),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
