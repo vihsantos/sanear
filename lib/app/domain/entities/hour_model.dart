@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:sanear/app//domain/entities/condition.dart';
+import 'package:sanear/app/domain/entities/condition.dart';
 
 class Hour extends Equatable {
   const Hour({
