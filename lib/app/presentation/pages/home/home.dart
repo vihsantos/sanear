@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sanear/app/presentation/controllers/home_controller.dart';
+import 'package:sanear/app/presentation/utils/color_palette.dart';
 import 'package:sanear/app/presentation/widgets/city_info_widget.dart';
-
-import '../../utils/color_palette.dart';
-import '../sos/sos.dart';
 import 'components/custom_button.dart';
+import '../sos/sos.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key, required this.homeController});
@@ -23,7 +22,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
           backgroundColor: const Color(0xffFAFAFA),
@@ -87,36 +85,35 @@ class _HomeState extends State<Home> {
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Image.asset(
-                        "assets/img/embasa.png",
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Image.asset(
-                        "assets/img/limpurb.png",
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Image.asset(
-                        "assets/img/codesal.png",
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
+                    CustomButton(
+                        url: "https://www.embasa.ba.gov.br/",
+                        child: Image.asset(
+                          "assets/img/embasa.png",
+                          fit: BoxFit.fitWidth,
+                        )),
+                    CustomButton(
+                        url: "https://limpurb.salvador.ba.gov.br/",
+                        child: Image.asset(
+                          "assets/img/limpurb.png",
+                          fit: BoxFit.fitWidth,
+                        )),
+                    CustomButton(
+                        url: "http://www.codesal.salvador.ba.gov.br/",
+                        child: Image.asset(
+                          "assets/img/codesal.png",
+                          fit: BoxFit.fitWidth,
+                        )),
+                    const CustomButton(
+                        url:
+                            "http://www.saude.salvador.ba.gov.br/servicos/servicos-para-o-cidadao/zoonoses/",
+                        child: Center(
+                          child: Text(
+                            "Centro de Zoonozes de Salvador",
+                            style: TextStyle(
+                                color: ColorPalette.blueColor,
+                                fontWeight: FontWeight.w900),
+                          ),
+                        )),
                   ],
                 ),
               )
