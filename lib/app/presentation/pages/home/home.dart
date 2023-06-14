@@ -86,26 +86,26 @@ class _HomeState extends State<Home> {
                   mainAxisSpacing: 10,
                   children: [
                     CustomButton(
-                        url: "https://www.embasa.ba.gov.br/",
+                        url: "https://www.embasa.ba.gov.br",
                         child: Image.asset(
                           "assets/img/embasa.png",
                           fit: BoxFit.fitWidth,
                         )),
                     CustomButton(
-                        url: "https://limpurb.salvador.ba.gov.br/",
+                        url: "https://limpurb.salvador.ba.gov.br",
                         child: Image.asset(
                           "assets/img/limpurb.png",
                           fit: BoxFit.fitWidth,
                         )),
                     CustomButton(
-                        url: "http://www.codesal.salvador.ba.gov.br/",
+                        url: "http://www.codesal.salvador.ba.gov.br",
                         child: Image.asset(
                           "assets/img/codesal.png",
                           fit: BoxFit.fitWidth,
                         )),
                     const CustomButton(
                         url:
-                            "http://www.saude.salvador.ba.gov.br/servicos/servicos-para-o-cidadao/zoonoses/",
+                            "http://www.saude.salvador.ba.gov.br/servicos/servicos-para-o-cidadao/zoonoses",
                         child: Center(
                           child: Text(
                             "Centro de Zoonozes de Salvador",
