@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sanear/app/presentation/controllers/home_controller.dart';
 import 'package:sanear/app/presentation/utils/color_palette.dart';
 import 'package:sanear/app/presentation/widgets/city_info_widget.dart';
+import 'components/barra_pesquisa.dart';
 import 'components/custom_button.dart';
 import '../sos/sos.dart';
 
@@ -45,7 +46,7 @@ class _HomeState extends State<Home> {
                           MaterialStatePropertyAll(Color(0xFFB01E1E))),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Sos()));
+                        MaterialPageRoute(builder: (context) => const Sos()));
                   },
                   child: const Icon(
                     Icons.sos,
@@ -56,68 +57,71 @@ class _HomeState extends State<Home> {
               )
             ],
           ),
-          body: Column(
-            children: [
-              ValueListenableBuilder(
-                valueListenable: widget.homeController.loadingNotifier,
-                builder: (_, dynamic loading, __) {
-                  if (loading) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
+          body: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                ValueListenableBuilder(
+                  valueListenable: widget.homeController.loadingNotifier,
+                  builder: (_, dynamic loading, __) {
+                    if (loading) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
 
-                  if (widget.homeController.weather == null) {
-                    return const Center(
-                        child: Text('Erro ao consultar previsão do Tempo'));
-                  }
+                    if (widget.homeController.weather == null) {
+                      return const Center(
+                          child: Text('Erro ao consultar previsão do Tempo'));
+                    }
 
-                  return CityInfoWidget(
-                    weather: widget.homeController.weather!,
-                  );
-                },
-              ),
-
-              // Grid view
-              Padding(
-                padding: const EdgeInsets.all(15),
-                child: GridView.count(
-                  shrinkWrap: true,
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  children: [
-                    CustomButton(
-                        url: "https://www.embasa.ba.gov.br",
-                        child: Image.asset(
-                          "assets/img/embasa.png",
-                          fit: BoxFit.fitWidth,
-                        )),
-                    CustomButton(
-                        url: "https://limpurb.salvador.ba.gov.br",
-                        child: Image.asset(
-                          "assets/img/limpurb.png",
-                          fit: BoxFit.fitWidth,
-                        )),
-                    CustomButton(
-                        url: "http://www.codesal.salvador.ba.gov.br",
-                        child: Image.asset(
-                          "assets/img/codesal.png",
-                          fit: BoxFit.fitWidth,
-                        )),
-                    const CustomButton(
-                        url:
-                            "http://www.saude.salvador.ba.gov.br/servicos/servicos-para-o-cidadao/zoonoses",
-                        child: Center(
-                          child: Text(
-                            "Centro de Zoonozes de Salvador",
-                            style: TextStyle(
-                                color: ColorPalette.blueColor,
-                                fontWeight: FontWeight.w900),
-                          ),
-                        )),
-                  ],
+                    return CityInfoWidget(
+                      weather: widget.homeController.weather!,
+                    );
+                  },
                 ),
-              )
-            ],
+                const BarraDePesquisa(),
+                // Grid view
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: GridView.count(
+                    shrinkWrap: true,
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    children: [
+                      CustomButton(
+                          url: "https://www.embasa.ba.gov.br",
+                          child: Image.asset(
+                            "assets/img/embasa.png",
+                            fit: BoxFit.fitWidth,
+                          )),
+                      CustomButton(
+                          url: "https://limpurb.salvador.ba.gov.br",
+                          child: Image.asset(
+                            "assets/img/limpurb.png",
+                            fit: BoxFit.fitWidth,
+                          )),
+                      CustomButton(
+                          url: "http://www.codesal.salvador.ba.gov.br",
+                          child: Image.asset(
+                            "assets/img/codesal.png",
+                            fit: BoxFit.fitWidth,
+                          )),
+                      const CustomButton(
+                          url:
+                              "http://www.saude.salvador.ba.gov.br/servicos/servicos-para-o-cidadao/zoonoses",
+                          child: Center(
+                            child: Text(
+                              "Centro de Zoonozes de Salvador",
+                              style: TextStyle(
+                                  color: ColorPalette.blueColor,
+                                  fontWeight: FontWeight.w900),
+                            ),
+                          )),
+                    ],
+                  ),
+                )
+              ],
+            ),
           )),
     );
   }
