@@ -2,7 +2,7 @@
     package="com.example.sanear">
    <application
         android:usesCleartextTraffic="true"
-        android:label="sanear"
+        android:label="Sanear"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
