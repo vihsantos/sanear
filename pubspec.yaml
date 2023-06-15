@@ -55,11 +55,11 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/img/sanear_icon.png"
+  image_path: "assets/img/playstore.png"
 
 flutter_native_splash:
-  color: "#FFFFFF"
-  image: assets/img/sanear_icon.png
+  color: "#5FA5CC"
+  image: assets/img/sanear_splash.png
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
