@@ -36,11 +36,32 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   http: ^0.13.5
-  flutter_svg: ^2.0.5
+  equatable: ^2.0.3
+  dartz: ^0.10.1
+  url_launcher: ^6.1.11
+  geolocator: ^9.0.2
+  get_it: ^7.2.0
+  csv: ^5.0.2
+  flutter_typeahead: ^4.6.2
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.1.11
+
+  flutter_launcher_icons: ^0.9.3
+  flutter_native_splash: ^2.1.6
+
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/img/playstore.png"
+
+flutter_native_splash:
+  color: "#5FA5CC"
+  image: assets/img/sanear_splash.png
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -62,9 +83,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/img/defesa-civil.svg
-    - assets/img/embasa.svg
-    - assets/img/limpurb.svg
+    - assets/json/dados_sos.json
+    - assets/json/pesquisa.json
+    - assets/img/embasa.png
+    - assets/img/limpurb.png
+    - assets/img/codesal.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
